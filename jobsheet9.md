@@ -50,17 +50,19 @@ public class ArrayBilangan19 {
 
 #### 2.1.3 Jawaban Pertanyaan / Pertanyaan Refleksi
 * **Pertanyaan 1:** Jika isi masing-masing elemen array bil diubah dengan angka 5.0, 12867, 7.5, 2000000, apa yang terjadi? Mengapa bisa demikian?
-  * **Jawab:** .
+  * **Jawab:** Jika diisi 5.0, 12867, 7.5, 2000000: Program akan gagal di-compile (compile error). Array bil bertipe int (bilangan bulat), sedangkan 5.0 dan 7.5 adalah bilangan desimal (double), serta 2000000 atau 12867 jika melebihi batas tipe data yang sesuai akan memicu error tipe data.
 * **Pertanyaan 2:** Modifikasi kode program di atas dengan melakukan inisialisasi elemen array sekaligus pada saat deklarasi array (tanpa new int[4] dan pengisian satu per satu).
 ![Output Percobaan](<Output .png>)
-  * **Jawab:** .
-* **Pertanyaan 3:** Ubah statement penampilan pada langkah ke-4 menjadi seperti berikut: System.out.println("bil[" + i + "] = " + bil[i] + ", double = " + (bil[i] * 2)); Apa keluaran dari program? Jelaskan maksud dari statement
-tersebut.
-   * **Jawab:** .
+  * **Jawab:** Bisa ditulis langsung seperti int[] bil = {5, 13, -7, 17};.
+* **Pertanyaan 3:** Ubah statement penampilan pada langkah ke-4 menjadi seperti berikut: System.out.println("bil[" + i + "] = " + bil[i] + ", double = " + (bil[i] * 2)); Apa keluaran dari program? Jelaskan maksud dari statement tersebut.
+   * **Jawab:** Keluaran dan maksud bil[i] + ", double = " + (bil[i] * 2): Program mencetak nilai asli elemen array diikuti hasil kali dua dari elemen tersebut. Tanda kurung pada (bil[i] * 2) penting agar perkalian dihitung dulu sebagai angka sebelum digabung menjadi teks.
 * **Pertanyaan 4:** Jika kondisi pada statement for-loop di atas diubah menjadi i <= 4, apa keluaran dari program? Mengapa demikian?
-  * **Jawab:**  .
+  * **Jawab:** Jika kondisi diubah menjadi i <= 4: Program akan mengalami runtime error (ArrayIndexOutOfBoundsException) saat i = 4 karena array berkapasitas 4 hanya memiliki indeks 0 sampai 3.
 * **Pertanyaan 5:** Apa perbedaan antara menampilkan array menggunakan for loop, foreach loop, dan Arrays.toString() pada langkah ke-5? Kapan sebaiknya masing-masing digunakan?
-  * **Jawab:** .
+  * **Jawab:** Perbedaan for, foreach, dan Arrays.toString():
+for loop: Mengakses elemen memakai indeks i. Cocok jika butuh nomor indeks atau ingin mengubah isi array.
+foreach loop: Membaca tiap nilai elemen secara langsung tanpa memakai indeks. Cocok untuk menampilkan isi array secara ringkas.
+Arrays.toString(): Mengubah seluruh isi array menjadi satu baris teks berformat [a, b, c]. Cocok untuk pengecekan atau debugging cepat.   .
     
 ---
 
@@ -96,11 +98,12 @@ public class ArrayNilai19 {
 
 #### 2.2.3 Jawaban Pertanyaan / Pertanyaan Refleksi
 * **Pertanyaan 1:** Apa yang dimaksud dengan kondisi i < nilaiAkhir.length pada perulangan di atas?
-  * **Jawab:** 
+  * **Jawab:** Maksud i < nilaiAkhir.length: Perulangan berjalan selama indeks i masih lebih kecil dari panjang array nilaiAkhir (yaitu 0 sampai 9 untuk array berukuran 10). 
 * **Pertanyaan 2:** Modifikasi program agar hanya menampilkan nilai mahasiswa yang lulus saja (nilai > 70), tanpa menampilkan yang tidak lulus. Jelaskan alur programnya!
-  * **Jawab:** 
+  * **Jawab:** Hanya menampilkan yang lulus (nilai > 70): Di dalam perulangan tampil, gunakan kondisi if (nilaiAkhir[i] > 70) agar baris cetak hanya dijalankan jika nilai lebih dari 70. Mahasiswa dengan nilai <=70 dilewati begitu saja. 
 * **Pertanyaan 3:** Ubah perulangan pada langkah ke-4 dan ke-5 dari for loop menjadi foreach loop. Apakah seluruh bagian program dapat diubah menjadi foreach? Jelaskan bagian mana yang bisa dan tidak bisa, beserta alasannya.
-  * **Jawab:** 
+  * **Jawab:** Mengubah for menjadi foreach:Bagian tampil (langkah 5) bisa: Karena hanya membaca nilai tiap elemen tanpa butuh indeks.
+Bagian input (langkah 4) kurang tepat/tidak praktis: foreach tidak menyediakan indeks posisi elemen dan tidak ideal untuk mengisi/mengubah elemen array berdasarkan urutan input.   
 * **Pertanyaan 4:**  Modifikasi program agar turut menghitung dan menampilkan jumlah mahasiswa yang lulus dan jumlah mahasiswa yang tidak lulus di akhir program.
   * **Jawab:** 
 
@@ -164,7 +167,7 @@ public class ArrayRataNilai19 {
 ![Output Modif Percobaan](<Output.png>)
 
 * **Pertanyaan 3:** Mengapa pada perhitungan rata-rata digunakan (double) total / nilaiMhs.length, bukan langsung total / nilaiMhs.length? Jelaskan!.
-  * **Jawab:** 
+  * **Jawab:** Karena total dan nilaiMhs.length bertipe int. Pembagian sesama int akan membuang angka di belakang koma (pembagian bulat), sedangkan (double) mengubahnya menjadi pecahan desimal agar hasil rata-rata akurat.
 
 ### 2.4 Percobaan 4: Pencarian (Searching) dan Pengurutan (Sorting) Sederhana
 
@@ -222,17 +225,19 @@ public class SortNilai19 {
 
 #### 2.4.3 Jawaban Pertanyaan / Pertanyaan Refleksi
 * **Pertanyaan 1:** Jelaskan maksud dari statement break; pada kode program Bagian A di atas!
-  * **Jawab:** 
+  * **Jawab:** Maksud break; pada Linear Search: Menghentikan perulangan lebih awal begitu nilai key yang dicari sudah ditemukan, sehingga tidak perlu memeriksa sisa elemen berikutnya.
 * **Pertanyaan 2:** Modifikasi kode program Bagian A sehingga program dapat menerima input berupa banyaknya elemen array nilai, isi array, dan sebuah nilai (key) yang ingin dicari dari pengguna, lalu mencetak indeks posisi elemen dari nilai (key) tersebut.
-  * **Jawab:**
+  * **Jawab:** Input ukuran array, isi array, dan key dari pengguna: Baca jumlah elemen untuk membuat array, isi tiap elemen lewat loop, baca key, lalu cari menggunakan loop dan cetak indeksnya jika cocok.
 * **Pertanyaan 3:** Modifikasi program Bagian A agar menampilkan pesan "Nilai yang dicari tidak ditemukan" dengan format pesan yang lebih informatif apabila nilai yang dicari (key) tidak ada di dalam array.
-  * **Jawab:** .
+  * **Jawab:** Pesan jika key tidak ditemukan: Jika setelah loop selesai status penemuan masih false, tampilkan pesan jelas seperti "Nilai " + key + " tidak ditemukan di dalam data array.".
+![Output Modif Percobaan](<Output.png>)
+
 * **Pertanyaan 4:** Jelaskan langkah demi langkah cara kerja algoritma bubble sort pada Bagian B menggunakan data ujicoba yang tersedia!
-  * **Jawab:** 
+  * **Jawab:** Cara kerja Bubble Sort pada {78, 65, 90, 55, 88, 72}: Algoritma membandingkan dua elemen bersebelahan (nilai[j] dan nilai[j + 1]). Jika elemen kiri lebih besar dari kanan, posisinya ditukar memakai variabel temp. Proses ini diulang beberapa putaran hingga angka terbesar "menggelembung" ke kanan dan seluruh array terurut naik.
 * **Pertanyaan 5:** Modifikasi program Bagian B agar mengurutkan array dari nilai terbesar ke terkecil (descending),
 bukan dari terkecil ke terbesar.
   * **Jawab:** 
-
+![Output Modif Percobaan](<Output.png>)
 
 
 ## 3: TUGAS MANDIRI
