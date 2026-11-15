@@ -46,7 +46,7 @@ public class ArrayBilangan19 {
 
 #### 2.1.2 Hasil Running / Screenshot Output
 
-![Output Percobaan 1](<Output .png>)
+![Output Percobaan 1](<Output Array Bilangan.png>)
 
 #### 2.1.3 Jawaban Pertanyaan / Pertanyaan Refleksi
 * **Pertanyaan 1:** Jika isi masing-masing elemen array bil diubah dengan angka 5.0, 12867, 7.5, 2000000, apa yang terjadi? Mengapa bisa demikian?
@@ -92,7 +92,7 @@ public class ArrayNilai19 {
 
 #### 2.2.2 Hasil Running
 
-![Output Percobaan 2](<Output .png>)
+![Output Percobaan 2](<Output Array Nilai.png>)
 
 #### 2.2.3 Jawaban Pertanyaan / Pertanyaan Refleksi
 * **Pertanyaan 1:** Apa yang dimaksud dengan kondisi i < nilaiAkhir.length pada perulangan di atas?
@@ -152,7 +152,7 @@ public class ArrayRataNilai19 {
 ```
 #### 2.3.2 Hasil Running
 
-![Output Percobaan 3](<Output .png>)
+![Output Percobaan 3](<Output Rata Nilai.png>)
 
 #### 2.3.3 Jawaban Pertanyaan / Pertanyaan Refleksi
 * **Pertanyaan 1:** Modifikasi kode program di atas agar dapat menampilkan banyaknya mahasiswa yang lulus, yaitu mahasiswa yang memiliki nilai lebih besar dari 70 (> 70)..
@@ -214,11 +214,11 @@ public class SortNilai19 {
 
 #### 2.4.2 Hasil Running: Bagian A 
 
-![Output Percobaan 4](<Output.png>)
+![Output Percobaan 4](<Output A.png>)
 
 #### Hasil Running: Bagian B
 
-![Output Percobaan 4](<Output.png>)
+![Output Percobaan 4](<Output B.png>)
 
 #### 2.4.3 Jawaban Pertanyaan / Pertanyaan Refleksi
 * **Pertanyaan 1:** Jelaskan maksud dari statement break; pada kode program Bagian A di atas!
