@@ -61,8 +61,7 @@ tersebut.
     
 ---
 
-### 2.2 Percobaan 2: Pola Bintang Persegi Panjang (Nested FOR)
-
+### 2.2 Percobaan 2: Studi Kasus SIAKAD — Input Nilai Mahasiswa dan Status Kelulusan
 
 #### 2.2.1 Kode Program
 ```java
@@ -90,25 +89,24 @@ public class Rectangle19 {
 
 #### 2.2.2 Hasil Running
 
-![Output Percobaan 2](<Output Rectangle.png>)
+![Output Percobaan 2](<Output .png>)
 
 #### 2.2.3 Jawaban Pertanyaan / Pertanyaan Refleksi
-* **Pertanyaan 1:** Tentukan fungsi variabel i dan j pada program tersebut.
-  * **Jawab:** Variabel i mengatur jumlah baris (ke bawah), sedangkan variabel j mengatur jumlah kolom bintang (ke samping).
-* **Pertanyaan 2:** Berapa kali outer loop, inner loop, dan perintah print("*") dijalankan untuk baris = 4 dan kolom = 7?
-  * **Jawab:** Outer loop jalan 4 kali, inner loop jalan 4 x 7 = 28 kali, dan perintah cetak * juga dijalankan 28 kali.
-* **Pertanyaan 3:** Apa yang terjadi jika batas perulangan luar dan dalam ditukar (outer menggunakan kolom, inner menggunakan baris)? Gunakan baris = 3 dan kolom = 6 untuk menjelaskan.
-  * **Jawab:** Bentuk pola bintang akan berputar, posisi baris dan kolomnya tertukar.
-* **Pertanyaan 4:** Jelaskan akibat penghapusan System.out.println(); setelah inner loop.
-  * **Jawab:** Semua bintang akan berderet menyamping menjadi satu baris panjang tanpa turun ke bawah.
-* **Pertanyaan 5:**  Modifikasi program agar karakter yang dicetak adalah #, lalu commit dan push perubahan ke GitHub
-  * **Jawab:**
+* **Pertanyaan 1:** Apa yang dimaksud dengan kondisi i < nilaiAkhir.length pada perulangan di atas?
+  * **Jawab:** 
+* **Pertanyaan 2:** Modifikasi program agar hanya menampilkan nilai mahasiswa yang lulus saja (nilai > 70), tanpa menampilkan yang tidak lulus. Jelaskan alur programnya!
+  * **Jawab:** 
+* **Pertanyaan 3:** Ubah perulangan pada langkah ke-4 dan ke-5 dari for loop menjadi foreach loop. Apakah seluruh bagian program dapat diubah menjadi foreach? Jelaskan bagian mana yang bisa dan tidak bisa, beserta alasannya.
+  * **Jawab:** 
+* **Pertanyaan 4:**  Modifikasi program agar turut menghitung dan menampilkan jumlah mahasiswa yang lulus dan jumlah mahasiswa yang tidak lulus di akhir program.
+  * **Jawab:** 
 
-![Output Modif Percobaan](<Output-Rectangle.png>)
+![Output Modif Percobaan](<Output.png>)
 
 ---
 
-### 2.3 Percobaan 3: Debugging Bintang Segitiga – Nested WHILE
+### 2.3 Percobaan 3: Operasi Aritmatika pada Array — Total, Rata-rata, Nilai Tertinggi dan Terendah
+
 #### 2.3.1 Kode Program Java
  ```java
 import java.util.Scanner;
@@ -135,219 +133,104 @@ public class Triangle19 {
 ```
 #### 2.3.2 Hasil Running
 
-![Output Percobaan 3](<Output Triangle.png>)
-
-#### Hasil Running Modifikasi
-
-![Output Percobaan 3](<Output Modif Triangle.png>)
+![Output Percobaan 3](<Output .png>)
 
 #### 2.3.3 Jawaban Pertanyaan / Pertanyaan Refleksi
-* **Pertanyaan 1:** Sebutkan ketidaksesuaian output awal dan minimal dua perbaikan yang diperlukan untuk menghasilkan pola segitiga bertingkat.
-  * **Jawab:** Awalnya bintang berderet lurus ke samping dan jumlah barisnya salah. Perbaikannya adalah menambah perintah pindah baris (println) serta memperbaiki batasan angka perulangan luarnya.
-* **Pertanyaan 2:** Jelaskan peran variabel i dan j. Mengapa nilai j harus diinisialisasi kembali ke 0 pada setiap iterasi outer loop? Apa yang terjadi jika j tidak di-reset?
-  * **Jawab:** Variabel i untuk baris, variabel j untuk kolom. Nilai j harus di-reset ke 0 di setiap baris baru agar hitungan bintang selalu dimulai dari awal lagi. 
-* **Pertanyaan 3:** Jelaskan perubahan inisialisasi, kondisi, dan perubahan nilai (update) pada outer loop yang diperlukan untuk membentuk segitiga terbalik.
-  * **Jawab:** Titik awal i dimulai dari angka terbesar (n), kondisinya menggunakan >= 1, dan perubahannya dikurangi (i--). 
+* **Pertanyaan 1:** Modifikasi kode program di atas agar dapat menampilkan banyaknya mahasiswa yang lulus, yaitu mahasiswa yang memiliki nilai lebih besar dari 70 (> 70)..
+  * **Jawab:**
+![Output Modif Percobaan](<Output.png>)
 
-### 2.4 Percobaan 4: Studi Kasus Nilai Tugas Proyek Kelompok
-#### 2.4.1 Kode Program Java
+* **Pertanyaan 2:** Modifikasi program di atas sehingga program menerima jumlah elemen array berdasarkan input dari pengguna (tidak selalu 10), lalu tetap dapat menghitung total, rata-rata, nilai tertinggi, dan nilai terendah dengan benar.
+  * **Jawab:**
+![Output Modif Percobaan](<Output.png>)
+
+* **Pertanyaan 3:** Mengapa pada perhitungan rata-rata digunakan (double) total / nilaiMhs.length, bukan langsung total / nilaiMhs.length? Jelaskan!.
+  * **Jawab:** 
+
+### 2.4 Percobaan 4: Pencarian (Searching) dan Pengurutan (Sorting) Sederhana
+
+#### 2.4.1 Kode Program Java: Bagian A - Linear Search
 ```java
-import java.util.Scanner;
 
-public class NilaiKelompok19 {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
 
-        System.out.print("Masukkan jumlah kelompok : ");
-        int jumlahKelompok = sc.nextInt();
-        System.out.print("Masukkan jumlah penilai  : ");
-        int jumlahPenilai = sc.nextInt();
-
-        if (jumlahKelompok <= 0 || jumlahPenilai <= 0) {
-            System.out.println("Jumlah kelompok dan penilai harus > 0.");
-        } else {
-            int nomorKelompok = 1;        // penghitung outer loop
-            double rataTertinggi = -1;    // - 1 agar kelompok pertama pasti tercatat
-            int kelompokTerbaik = 0;
-
-            while (nomorKelompok <= jumlahKelompok) {
-                System.out.println("Kelompok " + nomorKelompok);
-                double totalNilai = 0;
-
-                for (int j = 1; j <= jumlahPenilai; j++) {        // inner loop penilai
-                    int nilai;
-                    do {
-                        System.out.print("  Nilai dari penilai " + j + ": ");
-                        nilai = sc.nextInt();
-                        if (nilai < 0 || nilai > 100) {
-                            System.out.println("  Nilai harus 0-100. Ulangi input!");
-                        }
-                    } while (nilai < 0 || nilai > 100);
-                    totalNilai += nilai;
-                }
-                double rataNilai = totalNilai/jumlahPenilai;
-                System.out.println("Kelompok " + nomorKelompok + ": nilai rata rata = " + rataNilai);
-
-                if (rataNilai > rataTertinggi) {
-                    rataTertinggi = rataNilai;
-                    kelompokTerbaik = nomorKelompok;
-                }
-                nomorKelompok++;
-            }
-            System.out.println("===============================");
-            System.out.println("Kelompok terbaik     : " + kelompokTerbaik);
-            System.out.println("Rata-rata tertinggi  : " + rataTertinggi);
-        }
-        sc.close();
-    }
-}
 
 ```
-#### 2.4.2 Hasil Running
+#### Kode Program: Bagian B - Bubble Sort
+```java
 
-![Output Percobaan 4](<Output Nilai Kelompok.png>)
+
+```
+
+
+#### 2.4.2 Hasil Running: Bagian A 
+
+![Output Percobaan 4](<Output.png>)
+
+#### Hasil Running: Bagian B
+
+![Output Percobaan 4](<Output.png>)
 
 #### 2.4.3 Jawaban Pertanyaan / Pertanyaan Refleksi
-* **Pertanyaan 1:** Mengapa totalNilai perlu di-reset di dalam outer loop, tetapi rataTertinggi tidak boleh di-reset pada setiap kelompok?
-  * **Jawab:** totalNilai harus di-reset agar nilai antar kelompok tidak tercampur. Sementara rataTertinggi dibiarkan agar nilai paling tinggi dari kelompok sebelumnya tetap tersimpan.
-* **Pertanyaan 2:** Untuk 3 kelompok dan 2 penilai (tanpa input yang salah), berapa kali badan perulangan FOR dijalankan secara keseluruhan?
-  * **Jawab:** Dijalankan sebanyak 6 kali (3 x 2).
-* **Pertanyaan 3:** Apa yang terjadi jika totalNilai dideklarasikan sebagai int dan rata-rata dihitung menggunakan pembagian dua bilangan bulat? Berikan contoh nilai.
-  * **Jawab:** Angka di belakang koma (desimal) pada hasil rata-rata akan hilang atau terbuang (contoh: 85.5 menjadi 85 saja).
-* **Pertanyaan 4:** Mengapa rataTertinggi diberi nilai awal -1, bukan 0? Berikan contoh input yang membuat hasil salah apabila nilai awalnya 0.
-  * **Jawab:** Agar jika ada kelompok yang mendapat nilai 0 atau di atas 0, nilai tersebut bisa langsung mengalahkan -1. Jika di-set 0, kelompok dengan nilai di bawahnya tidak akan terbaca dengan benar.
-* **Pertanyaan 5:**  Program ini memiliki tiga tingkat perulangan. Sebutkan masing-masing jenis perulangan beserta perannya.
-  * **Jawab:** Perulangan WHILE luar (mengatur perpindahan kelompok), FOR tengah (mengatur penilai), dan DO-WHILE dalam (memastikan input nilai valid antara 0 sampai 100).
+* **Pertanyaan 1:** Jelaskan maksud dari statement break; pada kode program Bagian A di atas!
+  * **Jawab:** 
+* **Pertanyaan 2:** Modifikasi kode program Bagian A sehingga program dapat menerima input berupa banyaknya elemen array nilai, isi array, dan sebuah nilai (key) yang ingin dicari dari pengguna, lalu mencetak indeks posisi elemen dari nilai (key) tersebut.
+  * **Jawab:**
+* **Pertanyaan 3:** Modifikasi program Bagian A agar menampilkan pesan "Nilai yang dicari tidak ditemukan" dengan format pesan yang lebih informatif apabila nilai yang dicari (key) tidak ada di dalam array.
+  * **Jawab:** .
+* **Pertanyaan 4:** Jelaskan langkah demi langkah cara kerja algoritma bubble sort pada Bagian B menggunakan data ujicoba yang tersedia!
+  * **Jawab:** 
+* **Pertanyaan 5:** Modifikasi program Bagian B agar mengurutkan array dari nilai terbesar ke terkecil (descending),
+bukan dari terkecil ke terbesar.
+  * **Jawab:** 
 
 
 
 ## 3: TUGAS MANDIRI
-   1. Tugas 1: Buat program untuk mencetak pola bilangan 1 sampai nomor baris. Masukkan bilangan bulat n (n minimal 1). Pada baris pertama tercetak 1, pada baris kedua 1 2, dan seterusnya sampai baris ke-n. Setelah pola selesai, tampilkan total banyaknya angka yang telah dicetak
+   1. Tugas 1 - Pengelolaan Nilai Mahasiswa: Buatlah program yang dapat menyimpan dan mengelola nilai mahasiswa (bilangan bulat). Program harus
+menyediakan fitur untuk:
+• Memasukkan banyaknya nilai mahasiswa yang akan diinput.
+• Memasukkan setiap nilai mahasiswa satu per satu.
+• Menghitung nilai rata-rata dari seluruh nilai yang dimasukkan.
+• Menampilkan nilai tertinggi dan nilai terendah.
+• Menampilkan semua nilai yang telah dimasukkan, beserta status kelulusannya (LULUS / TIDAK LULUS).
    * **Kode Program java**
 ```java
-import java.util.Scanner;
 
-public class Tugas1_19 {
-    public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
-        
-        System.out.print("Masukkan nilai n = ");
-        int n = sc.nextInt();
-
-        int totalAngka = 0;
-        for (int i = 1; i <= n; i++) {
-            for (int j = 1; j <= i; j++) {
-                System.out.print(j + " ");
-                totalAngka++;
-            }
-            System.out.println();
-        }
-        System.out.println("Total angka tercetak: " + totalAngka);
-        sc.close();
-    }
-}
 
 ```
    * **Hasil Running**
 
 ![Output Tugas 1](<Output Tugas 1.png>)
 
-   2. Tugas 2: Buat program untuk menampilkan tabel perkalian berukuran n × n menggunakan nested FOR atau WHILE. Nilai n minimal 3. Setiap posisi menampilkan hasil perkalian nomor baris dan nomor kolom. Atur spasi agar keluaran rapi, lalu tampilkan jumlah seluruh angka pada tabel
+   2. Tugas 2 - Aplikasi Pemesanan Kafe Kampus: Buat program yang dapat mengelola pemesanan makanan dan minuman di kafe kampus. Program
+menyediakan daftar menu yang sudah ditentukan, memungkinkan pengguna memilih menu melalui fitur pencarian, mencatat pesanan, serta menghitung total biaya.
+
+Daftar menu kafe (inisialisasi array of String saat deklarasi):
+```java
+String[] menu = {"Nasi Goreng", "Mie Goreng", "Roti Bakar", "Kentang Goreng", "Teh Tarik", "Cappucino", "Chocolate Ice"};
+int[] harga = {15000, 13000, 10000, 12000, 8000, 18000, 20000};
+```
+Program yang dibuat wajib mencakup ketentuan berikut:
+• Fitur pencarian menu: pengguna memasukkan nama makanan/minuman yang ingin dipesan, program
+mencari nama tersebut di dalam array menu menggunakan algoritma linear search. Apabila
+ditemukan, tampilkan harganya; apabila tidak ditemukan, beri tahu pengguna bahwa menu tersebut
+tidak tersedia.
+• Fitur pemesanan: pengguna memasukkan jumlah item yang ingin dipesan, lalu untuk setiap item
+memilih nama menu (yang harus tervalidasi ada dalam daftar menu). Simpan nama pesanan dalam
+array satu dimensi terpisah dari array menu utama.
+• Hitung dan tampilkan total biaya dari seluruh pesanan yang dimasukkan pengguna.
+• Tampilkan daftar pesanan yang telah dibuat beserta total biayanya, dengan format tampilan yang rapi
+dan mudah dibaca.
+
    * **Kode Program Java**
 ```java
-import java.util.Scanner;
-
-public class Tugas2_19 {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        
-        System.out.print("Masukkan nilai n = ");
-        int n = sc.nextInt();
-        int totalAngka = 0;
-
-        if (n < 3) {
-            System.out.println("Nilai n minimal harus 3");
-        } else {
-            for (int i = 1; i <= n; i++) {
-                for (int j = 1; j <= n; j++) {
-                    int hasil = i * j;
-                    System.out.printf("%4d" , hasil);
-                    totalAngka += hasil;
-                }
-                System.out.println();
-            }
-        }
-        System.out.println("Jumlah seluruh angka: " + totalAngka);
-        sc.close();
-    }
-}
 
 
 ```
+
+
    * **Hasil Running**
 
 ![Output Tugas 2](<Output Tugas 2.png>)
 
-   3. Tugas 3: Sebuah pusat perbelanjaan memiliki beberapa toko. Setiap toko melayani sejumlah pelanggan pada hari yang sama, dan setiap pelanggan membeli beberapa barang. Program meminta jumlah toko, kemudian jumlah pelanggan pada masing-masing toko, dan jumlah
-barang yang dibeli setiap pelanggan. Hitung dan tampilkan total pelanggan serta total barang per toko, total barang seluruh toko, dan nomor toko dengan jumlah barang terbanyak. Jika terdapat nilai tertinggi yang sama, tampilkan toko dengan nomor paling kecil
-   * **Kode Program Java**
-```java
-import java.util.Scanner;
-
-public class Tugas3_19 {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
-        System.out.print("Masukkan jumlah toko: ");
-        int jmlToko = sc.nextInt();
-
-        if (jmlToko < 1) {
-            System.out.println("Jumlah toko minimal harus 1!");
-        } else {
-            int totBarangSeluruhToko = 0;
-            int barangTerbanyak = -1;
-            int tokoTerbanyak = 0;
-
-            for (int i = 1; i <= jmlToko; i++) {
-                int jmlPelanggan;
-                do {
-                    System.out.print("Masukkan jumlah pelanggan " + i + ": ");
-                    jmlPelanggan = sc.nextInt();
-                    if (jmlPelanggan < 0) {
-                        System.out.println("Jumlah pelanggan tidak boleh negatif!");
-                    }
-                } while (jmlPelanggan < 0);
-
-                int totBarangToko = 0;
-                for (int j = 1; j <= jmlPelanggan; j++) {
-                    int jmlBarang;
-                    do {
-                        System.out.print("  Jumlah barang pelanggan " + j + ": ");
-                        jmlBarang = sc.nextInt();
-                        if (jmlBarang < 0) {
-                            System.out.println("  Jumlah barang tidak boleh negatif!");
-                        }
-                    } while (jmlBarang < 0);
-
-                    totBarangToko += jmlBarang;
-                }
-                System.out.println("Toko " + i + " - pelanggan: " + jmlPelanggan + ", total barang: " + totBarangToko);
-                totBarangSeluruhToko += totBarangToko;
-
-                if (totBarangToko > barangTerbanyak) {
-                    barangTerbanyak = totBarangToko;
-                    tokoTerbanyak = i;
-                }
-            }
-            System.out.println("Total barang seluruh toko: " + totBarangSeluruhToko);
-            System.out.println("Toko dengan barang terbanyak: " + tokoTerbanyak);
-        }
-        sc.close();
-    }
-}
-
-```
-   * **Hasil Running**
-
-![Output Tugas 3](<Output Tugas 3.png>)
-
+  
